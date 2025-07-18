@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import {ClerkProvider} from "@clerk/nextjs";
 
 import { ModalProvider } from "@/providers/modal-provier";
+import { ToastProvider } from "@/providers/toast-provider";
 
 import "./globals.css";
 
@@ -32,6 +33,7 @@ export default function RootLayout({
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
+          <ToastProvider />
           <ModalProvider />
           {children}
         </body>
