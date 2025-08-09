@@ -24,7 +24,7 @@ export async function PATCH (
             return new NextResponse("Store ID is required", { status: 400 });
         }
 
-        const store = await prismadb.store.updateMany({
+        const store = await prismadb.store.update({
             where: {
                 id: params.storeId,
                 userId
@@ -46,19 +46,20 @@ export async function DELETE (
     { params }: { params: { storeId: string } }
 ) {
     try {
+        const { storeId } = await params
         const { userId } = await auth();
 
         if (!userId) {
             return new NextResponse("Unauthenticated", { status: 401 });
         }
 
-        if (!params.storeId) {
+        if (storeId) {
             return new NextResponse("Store ID is required", { status: 400 });
         }
 
-        const store = await prismadb.store.deleteMany({
+        const store = await prismadb.store.delete({
             where: {
-                id: params.storeId,
+                id: storeId,
                 userId
             }
         });

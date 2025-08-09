@@ -65,7 +65,7 @@ export async function PATCH (
             return new NextResponse("Unauthorized", { status: 403 });
         }
 
-        const category = await prismadb.category.updateMany({
+        const category = await prismadb.category.update({
             where: {
                 id: categoryId,
             },
@@ -110,7 +110,7 @@ export async function DELETE (
             return new NextResponse("Unauthorized", { status: 403 });
         }
 
-        const category = await prismadb.category.deleteMany({
+        const category = await prismadb.category.delete({
             where: {
                 id: categoryId,
             }
