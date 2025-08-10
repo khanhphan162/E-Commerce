@@ -25,8 +25,8 @@ import { Input } from "@/components/ui/input";
 import { AlertModal } from "@/components/modals/alert-modal";
 
 const formSchema = z.object({
-    name: z.string().min(1).max(100),
-    value: z.string().min(1).max(100)
+    name: z.string().min(1),
+    value: z.string().min(1)
 });
 
 interface SizeFormProps {

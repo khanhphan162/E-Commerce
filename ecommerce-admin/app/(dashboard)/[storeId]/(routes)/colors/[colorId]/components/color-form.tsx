@@ -25,7 +25,7 @@ import { Input } from "@/components/ui/input";
 import { AlertModal } from "@/components/modals/alert-modal";
 
 const formSchema = z.object({
-    name: z.string().min(1).max(100),
+    name: z.string().min(1),
     value: z.string().min(7).max(7).regex(/^#[0-9a-fA-F]{6}$/, {
         message: "String must be a valid hex code",
     }),

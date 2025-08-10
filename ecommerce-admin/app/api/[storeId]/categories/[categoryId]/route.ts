@@ -7,15 +7,15 @@ export async function GET (
     { params }: { params: { categoryId: string } }
 ) {
     try {
-        const param = await params;
+        const { categoryId } = await params;
 
-        if (!param.categoryId) {
+        if (!categoryId) {
             return new NextResponse("Category Id is required", { status: 400 });
         }
 
         const category = await prismadb.category.findUnique({
             where: {
-                id: param.categoryId,
+                id: categoryId,
             }
         });
 

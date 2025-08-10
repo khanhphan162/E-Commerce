@@ -25,14 +25,13 @@ import { Input } from "@/components/ui/input";
 import { AlertModal } from "@/components/modals/alert-modal";
 import { ApiAlert } from "@/components/ui/api-alert";
 import { useOrigin } from "@/hooks/use-origin";
-import prismadb from "@/lib/prismadb";
 
 interface SettingsFormProps {
     initialData: Store;
 }
 
 const formSchema = z.object({
-    name: z.string().min(2).max(100),
+    name: z.string().min(2),
 });
 
 type SettingsFormValues = z.infer<typeof formSchema>;

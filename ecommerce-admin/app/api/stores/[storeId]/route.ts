@@ -10,6 +10,8 @@ export async function PATCH (
         const { userId } = await auth();
         const body = await req.json();
 
+        const { storeId } = await params;
+
         const { name } = body;
 
         if (!userId) {
@@ -26,7 +28,7 @@ export async function PATCH (
 
         const store = await prismadb.store.update({
             where: {
-                id: params.storeId,
+                id: storeId,
                 userId
             },
             data: {
@@ -53,7 +55,7 @@ export async function DELETE (
             return new NextResponse("Unauthenticated", { status: 401 });
         }
 
-        if (storeId) {
+        if (!storeId) {
             return new NextResponse("Store ID is required", { status: 400 });
         }
 

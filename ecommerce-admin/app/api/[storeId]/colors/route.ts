@@ -11,8 +11,7 @@ export async function POST(
         const body = await req.json();
 
         const { name, value } = body;
-        const param = await params;
-        const storeId = param.storeId;
+        const { storeId } = await params;
 
         if (!userId) {
             return new NextResponse("Unauthenticated", { status: 401 });
@@ -61,13 +60,15 @@ export async function GET(
     { params } : { params: {storeId: string} }
 ) {
     try {
+        const { storeId } = await params
+        
         if (!params.storeId) {
             return new NextResponse("Store id is required", { status: 400 });
         }
 
         const colors = await prismadb.color.findMany({
             where: {
-                storeId: params.storeId,
+                storeId: storeId,
             },
         });
 
