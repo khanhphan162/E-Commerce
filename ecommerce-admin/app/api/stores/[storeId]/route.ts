@@ -22,7 +22,7 @@ export async function PATCH (
             return new NextResponse("Name is required", { status: 400 });
         }
 
-        if (!params.storeId) {
+        if (!storeId) {
             return new NextResponse("Store ID is required", { status: 400 });
         }
 

@@ -100,7 +100,7 @@ export async function GET(
         const colorId = searchParams.get("colorId") || undefined;
         const isFeatured = searchParams.get("isFeatured");
 
-        if (!params.storeId) {
+        if (!storeId) {
             return new NextResponse("Store Id is required", { status: 400 });
         }
 

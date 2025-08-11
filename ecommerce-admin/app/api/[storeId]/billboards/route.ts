@@ -62,7 +62,7 @@ export async function GET(
     try {
         const { storeId } = await params;
 
-        if (!params.storeId) {
+        if (!storeId) {
             return new NextResponse("Store id is required", { status: 400 });
         }
 
