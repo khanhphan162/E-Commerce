@@ -20,7 +20,7 @@ const Summary = () => {
             removeAll();
         }
 
-        if (searchParams.get("cancelled")) {
+        if (searchParams.get("canceled")) {
             toast.error("Something went wrong.");
         }
     }, [searchParams, removeAll]);
@@ -56,5 +56,5 @@ const Summary = () => {
         </div>
     );
 }
- 
+
 export default Summary;

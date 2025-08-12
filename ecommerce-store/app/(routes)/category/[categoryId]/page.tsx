@@ -33,7 +33,7 @@ const CategoryPage: React.FC<CategoryPageProps> = async ({
         categoryId,
         sizeId,
         colorId,
-        isFeatured: true    
+        isFeatured: true
     });
 
     const sizes = await getSizes();
