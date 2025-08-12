@@ -1,10 +1,13 @@
 import prismadb from "@/lib/prismadb";
+
 import { BillboardForm } from "./components/billboard-form";
 
-const BillboardPage = async ({
+interface BillboardPageProps {
+    params: { billboardId: string };
+}
+
+const BillboardPage: React.FC<BillboardPageProps> = async ({
     params,
-}:{
-    params: {billboardId: string}
 }) => {
     const { billboardId } = await params
 
