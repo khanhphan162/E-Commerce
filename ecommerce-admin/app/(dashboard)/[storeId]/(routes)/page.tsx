@@ -10,8 +10,9 @@ import { getStockCount } from "@/actions/get-stock-count";
 import Overview from "@/components/overview";
 import { getGraphRevenue } from "@/actions/get-graph-revenue";
 
+
 interface DashboardPageProps {
-    params: { storeId: string }
+    params: Promise<{ storeId: string }>;
 };
 
 const DashboardPage: React.FC<DashboardPageProps> = async ({

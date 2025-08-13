@@ -4,12 +4,13 @@ import { redirect } from "next/navigation";
 
 import Navbar from "../../../components/navbar";
 
+
 export default async function DashboardLayout({
     children,
-    params,
+    params
 }: {
-    children: React.ReactNode;
-    params: { storeId: string };
+    children: React.ReactNode,
+    params: Promise<{ storeId: string }>
 }) {
     const {userId} = await auth();
     const {storeId} = await params;

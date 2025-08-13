@@ -3,12 +3,11 @@ import prismadb from "@/lib/prismadb";
 
 import { BillboardForm } from "./components/billboard-form";
 
-type Params = Promise<{ billboardId: string }>;
 
 const BillboardPage = async ({
     params,
 }: {
-    params: Params,
+    params: Promise<{ billboardId: string }>
 }) => {
     const { billboardId } = await params
 

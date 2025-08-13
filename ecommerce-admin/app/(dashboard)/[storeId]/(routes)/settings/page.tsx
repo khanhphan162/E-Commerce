@@ -5,9 +5,7 @@ import prismadb from "@/lib/prismadb";
 import { SettingsForm } from "./settings-form";
 
 interface SettingPageProps {
-    params: { 
-        storeId: string
-    };
+    params: Promise<{ storeId: string }>;
 };
 
 const SettingPage: React.FC<SettingPageProps> = async ({ params }) => {

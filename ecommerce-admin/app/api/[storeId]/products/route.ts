@@ -4,7 +4,7 @@ import { NextResponse } from "next/server";
 
 export async function POST(
     req: Request,
-    { params }: { params: { storeId: string } }
+    { params }: { params: Promise<{ storeId: string }> }
 ) {
     try {
         const { userId } = await auth();
@@ -90,7 +90,7 @@ export async function POST(
 
 export async function GET(
     req: Request,
-    { params }: { params: { storeId: string } }
+    { params }: { params: Promise<{ storeId: string }> }
 ) {
     try {
         const { searchParams } = new URL(req.url);
