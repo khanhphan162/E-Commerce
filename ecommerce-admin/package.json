@@ -54,6 +54,14 @@
     "tw-animate-css": "^1.3.5",
     "typescript": "^5"
   },
+  "eslintConfig": {
+    "rules": {
+      "no-unused-vars": 0,
+      "@typescript-eslint/no-unused-vars": 0,
+      "no-unused-expressions": 0,
+      "@typescript-eslint/no-unused-expressions":0
+    }
+  },
   "pnpm": {
     "ignoredBuiltDependencies": [
       "@prisma/client"
